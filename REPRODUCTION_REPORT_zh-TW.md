@@ -138,7 +138,7 @@ mapping 與最終參數。完整排名在 `results/tables/shap_global_importance
 
 ## 5. 驗證狀態
 
-- `pytest`: 3 passed。
+- `pytest`: 4 passed。
 - `runtime_versions.json`: `quick_mode=false`。
 - Python 3.12.7、scikit-learn 1.8.0、XGBoost 3.1.2、LightGBM 4.6.0、
   SHAP 0.50.0，與論文列出的主要版本一致。

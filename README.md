@@ -6,8 +6,10 @@ This repository reproduces the method described in:
 > 30-day hospital readmission in patients with diabetes,” *Healthcare*, vol. 14,
 > no. 9, Art. no. 1185, 2026. DOI: 10.3390/healthcare14091185.
 
-Status: **complete full run** on all 101,766 encounters. The saved results use
-the 54-predictor feature table specified by official Supplementary Table S1.
+Status: **complete full-data independent reproduction** on all 101,766
+encounters. The main findings closely reproduce the paper, but this is not an
+exact rerun because the authors did not publish their code, random seeds,
+complete hyperparameter grid, or administrative-code mappings.
 
 詳細的中文方法、論文逐項對照、數值比較與限制請見
 [`REPRODUCTION_REPORT_zh-TW.md`](REPRODUCTION_REPORT_zh-TW.md)。
@@ -19,8 +21,8 @@ the 54-predictor feature table specified by official Supplementary Table S1.
 - Cleaning, missing-category handling, age midpoint conversion, top-10 medical
   specialty reduction, diagnosis flags, grouped administrative variables, and
   every engineered variable listed in Supplementary Table S1.
-- Leakage-safe `Pipeline` / `ColumnTransformer`, z-score scaling and one-hot
-  encoding.
+- Fold-local preprocessing for the primary nested-CV XGBoost pipeline using
+  `Pipeline` / `ColumnTransformer`, z-score scaling, and one-hot encoding.
 - Cost-sensitive Logistic Regression, Random Forest, XGBoost and LightGBM.
 - Logistic/XGBoost/LightGBM stacking with a Logistic Regression meta-learner.
 - XGBoost 5-outer/3-inner nested cross-validation and grid search.
@@ -54,6 +56,21 @@ The full run defaults to 5×3 nested CV, 1000 bootstrap resamples and 100 SHAP
 stability refits. `python reproduce.py --quick` is only an end-to-end smoke test
 and must not be reported as the paper reproduction.
 
+## Main results
+
+| Model | Paper ROC-AUC | Reproduction ROC-AUC |
+|---|---:|---:|
+| Logistic Regression | 0.657 | 0.6612 |
+| Random Forest | 0.650 | 0.6504 |
+| XGBoost | 0.664 | 0.6700 |
+| LightGBM | 0.660 | 0.6669 |
+| Stacking | 0.665 | 0.6703 |
+
+The nested out-of-fold XGBoost AUC was 0.6698. The full-cohort calibrated
+apparent AUC was 0.6961 with a Brier score of 0.0936. The latter is an apparent
+estimate evaluated on the same cohort used for model development and should
+not be interpreted as external-validation performance.
+
 ## Main outputs
 
 - `results/tables/model_comparison.csv`: outer-fold comparison of five models.
@@ -80,3 +97,12 @@ choices are explicit in this repository and summarized in
 should therefore be described as a close independent reproduction, not an exact
 execution of the authors’ unavailable implementation.
 
+The published validation is encounter-level rather than patient-grouped.
+Because some patients have multiple encounters, approximately 41%–42% of test
+encounters in each outer fold belong to patients who also appear in the
+corresponding training set. This follows the paper's described procedure but
+does not evaluate generalization to entirely unseen patients.
+
+The paper also contains internally inconsistent predictor counts and
+10%-threshold metrics. These issues are documented in
+`ASSUMPTIONS_AND_PAPER_ISSUES.md`.
