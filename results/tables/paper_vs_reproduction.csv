@@ -1,0 +1,16 @@
+metric,paper,reproduction,difference,reproduction_scope
+Logistic Regression ROC-AUC,0.657,0.66115497,0.00415497,outer-fold mean
+Random Forest ROC-AUC,0.650,0.65039862,0.00039862,outer-fold mean
+XGBoost ROC-AUC,0.664,0.66995294,0.00595294,outer-fold mean
+LightGBM ROC-AUC,0.660,0.66687393,0.00687393,outer-fold mean
+Stacking ROC-AUC,0.665,0.67031487,0.00531487,outer-fold mean
+Full-data calibrated ROC-AUC,0.688,0.69606909,0.00806909,apparent full-data estimate
+Brier score,0.094,0.09358350,-0.00041650,apparent full-data estimate
+PR-AUC,0.215,0.24208180,0.02708180,apparent full-data estimate
+XGBoost minority F1,0.270,0.27162869,0.00162869,nested OOF at threshold 0.5
+Sensitivity at 10%,0.723,0.69393326,-0.02906674,calibrated full-data predictions
+Specificity at 10%,0.530,0.57865920,0.04865920,calibrated full-data predictions
+PPV at 10%,0.162,0.17142298,0.00942298,calibrated full-data predictions
+NPV at 10%,0.938,0.93769716,-0.00030284,calibrated full-data predictions
+High risk per 1000 at 10%,497.9,451.7619,-46.1381,calibrated full-data predictions
+True readmissions per 1000 at 10%,80.6,77.4424,-3.1576,calibrated full-data predictions

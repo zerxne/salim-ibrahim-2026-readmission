@@ -1,0 +1,9 @@
+data/raw/*.csv
+data/raw/*.zip
+artifacts/models/
+__pycache__/
+.pytest_cache/
+.venv/
+.conda/
+*.pyc
+
