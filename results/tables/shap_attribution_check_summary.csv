@@ -1,0 +1,6 @@
+,value
+no_combo_test_ap,0.24208829304801682
+no_combo_test_auroc,0.6796290157810532
+main_test_ap,0.25138291739288315
+spearman_main_vs_no_combo,0.9386192028162575
+top5_same_set,True

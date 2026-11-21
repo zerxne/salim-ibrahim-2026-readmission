@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+artifacts/
+results/predictions/*.npz
+results/predictions/dev_oof_*.csv.gz

@@ -1,0 +1,7 @@
+CDC match rate: 96.5382% of encounters
+original        dev AP 0.22093  test AP 0.23737  (8s)
+balanced        dev AP 0.21296  test AP 0.23458  (8s)
+duplicate_1to1  dev AP 0.21283  test AP 0.22869  (13s)
+smotenc_1to1    dev AP 0.18783  test AP 0.19823  (95s)
+agesex_control  dev AP 0.21956  test AP 0.23884  (8s)
+agesex_cdc      dev AP 0.21780  test AP 0.24031  (9s)

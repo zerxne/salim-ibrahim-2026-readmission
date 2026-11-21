@@ -1,0 +1,11 @@
+# Python 3.12; versions match the team's 46-field HGB/CatBoost runs.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.5.1
+catboost==1.2.8
+shap==0.46.0
+imbalanced-learn==0.12.4
+matplotlib==3.9.2
+joblib==1.4.2
+threadpoolctl==3.5.0

@@ -1,0 +1,7 @@
+study,split,auroc,ap,positive_f1,brier,note
+"Liu, Sue & Wu 2024 [7]",patient-grouped 5-fold CV,0.64,,,,published F1 0.84 is not positive-class F1
+Emi-Johnson & Nkrumah 2025 [8],stratified 80/20 encounters,0.667,,0.032,,XGBoost; DNN reached F1 0.161 at AUROC 0.579
+Salim & Ibrahim 2026 [9],"nested CV, not patient-disjoint",0.664,0.215,0.271,,XGBoost
+Rajpoot 2026 [10] (published),patient-disjoint 80/20,0.677,0.237,,,"HGB, discharge-time fields"
+Ours: reproduced HGB,same patient-disjoint 80/20,0.6799553374101743,0.23737169718809753,0.2953072336012445,0.0965047786333785,F1 at development-selected threshold
+Ours: 46-field CatBoost,same patient-disjoint 80/20,0.6828103679285004,0.25138291739288315,0.3038878603544035,0.09581954594115756,F1 at development-selected threshold

@@ -1,0 +1,11 @@
+catboost: AP 0.2513829174 (reference 0.2513829174)
+catboost_raw_icd9: AP 0.2527627535 (reference 0.2527627535)
+HGB refit max |diff| vs saved predictions: 1.11e-16
+                       mean       min       max
+hgb                0.113684  0.012914  0.605113
+catboost           0.112598  0.023115  0.798638
+catboost_raw_icd9  0.112227  0.020777  0.816697
+blend              0.113141  0.018014  0.649622
+hgb_platt          0.114325  0.013212  0.602857
+catboost_platt     0.113611  0.021039  0.829843
+blend_platt        0.114010  0.015473  0.695804

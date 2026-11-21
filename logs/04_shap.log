@@ -1,0 +1,46 @@
+ rank                  feature                  label  mean_abs_shap_pp  pp_ci_low  pp_ci_high  mean_abs_shap_logodds  logodds_ci_low  logodds_ci_high  mean_signed_shap_pp  rank_ci_low  rank_ci_high  share_of_total_pp  rank_logodds
+    1         number_inpatient Prior inpatient visits          2.800801   2.674392    2.937299               0.270618        0.263343         0.278482             0.613213            1             1           0.295306             1
+    2 discharge_disposition_id  Discharge disposition          1.499776   1.468945    1.529097               0.134903        0.132762         0.136981            -0.288084            2             2           0.158131             2
+    3               payer_code             Payer code          0.491347   0.484493    0.499041               0.049418        0.048851         0.050005             0.009041            3             3           0.051806             4
+    4                   diag_1      Primary diagnosis          0.451796   0.439879    0.464232               0.048182        0.047484         0.048832             0.033276            4             4           0.047636             5
+    5         number_diagnoses    Number of diagnoses          0.419977   0.414390    0.425707               0.053213        0.052591         0.053772             0.062632            5             6           0.044281             3
+    6         number_emergency Prior emergency visits          0.395237   0.368707    0.424392               0.038568        0.036865         0.040479             0.060222            5             7           0.041672             7
+    7                  insulin                Insulin          0.379698   0.374116    0.386552               0.040721        0.040233         0.041286            -0.003282            6             7           0.040034             6
+    8         time_in_hospital  Length of stay (days)          0.282082   0.277897    0.286516               0.031475        0.031090         0.031859            -0.021592            8             8           0.029742             9
+    9                      age                    Age          0.262236   0.257998    0.266704               0.033169        0.032652         0.033652            -0.038771            9            10           0.027649             8
+   10        medical_specialty      Medical specialty          0.256110   0.249482    0.262736               0.027113        0.026609         0.027640            -0.051222            9            10           0.027003            10
+   11           chlorpropamide         chlorpropamide          0.199685   0.198828    0.200521               0.022582        0.022462         0.022705            -0.019356           11            11           0.021054            12
+   12          num_medications  Number of medications          0.196159   0.193117    0.199117               0.021835        0.021573         0.022066             0.041208           12            13           0.020682            14
+alert_budget                          1994.000000
+score_cutoff                             0.189220
+missed_positives                      1701.000000
+missed_with_zero_prior_inpatient       995.000000
+zero_visit_encounters                13233.000000
+zero_visit_prevalence                    0.083957
+zero_visit_auroc                         0.631092
+zero_visit_ap                            0.167839
+ge1_visit_auroc                          0.650355
+ge1_visit_ap                             0.308948
+zero_visit_share_above_cutoff            0.026449
+zero_visit_inpatient_shap_pp_mean       -1.648336
+zero_visit_fn_median_score               0.084110
+spearman_catboost_vs_hgb         0.931214
+spearman_catboost_vs_raw_icd9    0.930630
+top10_overlap_hgb                9.000000
+top10_overlap_raw_icd9           8.000000
+ rank                  feature                  label  mean_abs_shap_pp  own_value_r2  no_combo_mean_abs_shap_pp  no_combo_rank  flag_borrowed_attribution
+    1         number_inpatient Prior inpatient visits          2.800801      0.988438                   2.835352              1                      False
+    2 discharge_disposition_id  Discharge disposition          1.499776      0.763865                   2.029850              2                      False
+    3               payer_code             Payer code          0.491347      0.652717                   0.531799              3                      False
+    4                   diag_1      Primary diagnosis          0.451796      0.251565                   0.463501              4                      False
+    5         number_diagnoses    Number of diagnoses          0.419977      0.879099                   0.456243              5                      False
+    6         number_emergency Prior emergency visits          0.395237      0.931917                   0.374628              7                      False
+    7                  insulin                Insulin          0.379698      0.929231                   0.421410              6                      False
+    8         time_in_hospital  Length of stay (days)          0.282082      0.813625                   0.361982              8                      False
+    9                      age                    Age          0.262236      0.798837                   0.343180              9                      False
+   10        medical_specialty      Medical specialty          0.256110      0.523738                   0.299458             10                      False
+   11           chlorpropamide         chlorpropamide          0.199685      0.000626                   0.000163             39                       True
+   12          num_medications  Number of medications          0.196159      0.687175                   0.246550             13                      False
+   13                metformin              Metformin          0.192693      0.868528                   0.274979             11                      False
+   14                   diag_3     Tertiary diagnosis          0.188348      0.799321                   0.205227             14                      False
+   15                   diag_2    Secondary diagnosis          0.179631      0.471171                   0.148840             17                      False

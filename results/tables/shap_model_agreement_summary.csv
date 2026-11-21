@@ -1,0 +1,5 @@
+,value
+spearman_catboost_vs_hgb,0.931213889347787
+spearman_catboost_vs_raw_icd9,0.9306302436549846
+top10_overlap_hgb,9.0
+top10_overlap_raw_icd9,8.0

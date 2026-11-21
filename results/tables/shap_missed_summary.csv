@@ -1,0 +1,14 @@
+,value
+alert_budget,1994.0
+score_cutoff,0.189220137048928
+missed_positives,1701.0
+missed_with_zero_prior_inpatient,995.0
+zero_visit_encounters,13233.0
+zero_visit_prevalence,0.08395677472984206
+zero_visit_auroc,0.6310916275590601
+zero_visit_ap,0.1678394579792881
+ge1_visit_auroc,0.6503546872361753
+ge1_visit_ap,0.3089481603895007
+zero_visit_share_above_cutoff,0.02644902894279453
+zero_visit_inpatient_shap_pp_mean,-1.6483364142182861
+zero_visit_fn_median_score,0.0841103970878
